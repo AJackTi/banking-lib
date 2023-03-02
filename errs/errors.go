@@ -35,3 +35,24 @@ func NewValidationError(message string) *AppError {
 		Code:    http.StatusUnprocessableEntity,
 	}
 }
+
+func NewAuthenticationError(message string) *AppError {
+	return &AppError{
+		Message: message,
+		Code:    http.StatusUnauthorized,
+	}
+}
+
+func NewAuthorizationError(message string) *AppError {
+	return &AppError{
+		Message: message,
+		Code:    http.StatusForbidden,
+	}
+}
+
+func NewConfictError(message string) *AppError {
+	return &AppError{
+		Message: message,
+		Code:    http.StatusConflict,
+	}
+}
